@@ -1,27 +1,18 @@
-import multiprocessing
 from time import sleep
 
-import TetrisGame
 from client import Pixoo
-from tetris_module import Tetris
 
-def run_tetris_game():
-    TetrisGame.run_tetris_game()
 
 def main():
-    tetris = Tetris()
-
     pixoo = Pixoo("11:75:58:81:e8:b6")
     pixoo.connect()
 
     print("Connected to Pixoo")
 
-    # Create a separate process for running TetrisGame
-    tetris_game_process = multiprocessing.Process(target=run_tetris_game)
-    tetris_game_process.start()
+    pixoo.draw_text("Tetris", 12, 100, (0, 0, 255), (0, 0, 0))
 
     while True:
-        if tetris.notScoring:
+        if True:
             try:
                 sleep(0.01)
                 pixoo.draw_pic("tetris.png")
@@ -35,6 +26,7 @@ def main():
             except Exception as e:
                 print(f"An error occurred: {e}")
             sleep(0.01)
+
 
 if __name__ == '__main__':
     main()
