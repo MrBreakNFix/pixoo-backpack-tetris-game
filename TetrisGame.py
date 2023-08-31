@@ -2,8 +2,6 @@ import pygame
 import random
 import time
 
-# import tetris
-from tetris_module import Tetris
 
 def run_tetris_game():
     # Initialize Pygame
@@ -171,8 +169,6 @@ def run_tetris_game():
         clock.tick(3)
         if game_over:
             print("GAME OVER")
-            tetris_instance = Tetris()  # You might need to use the same instance as in the main_script.py
-            tetris_instance.notScoring = False
 
             if current_time - game_over_time >= 10:
                 game_over = False
@@ -186,5 +182,9 @@ def run_tetris_game():
     pygame.quit()
     exit()
 
+
+
 if __name__ == "__main__":
+
+
     run_tetris_game()
