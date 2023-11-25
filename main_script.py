@@ -9,8 +9,6 @@ def main():
 
     print("Connected to Pixoo")
 
-    pixoo.draw_text("Tetris", 12, 100, (0, 0, 255), (0, 0, 0))
-
     while True:
         if True:
             try:

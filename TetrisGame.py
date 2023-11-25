@@ -24,7 +24,7 @@ def run_tetris_game():
     RED = (255, 0, 0)
     BLUE = (0, 0, 255)
 
-    BACKGROUND = (50, 50, 50)
+    BACKGROUND = (0, 0, 0)
 
     # Tetromino shapes
     SHAPES = [
@@ -166,7 +166,7 @@ def run_tetris_game():
         except Exception as e:
             print(f"An error occurred: {e}")
 
-        clock.tick(3)
+        clock.tick(2)
         if game_over:
             print("GAME OVER")
 
