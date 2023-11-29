@@ -23,7 +23,7 @@ while True:
                 sys.exit()
             elif event.key == pygame.K_RETURN:  # Perform an action on pressing Enter
                 print("Action with input:", input_string)
-                pixoo.draw_text(str(input_string), 12, 100, (255, 255, 255), (0, 0, 0))
+                pixoo.draw_text(str(input_string), 12, 100, (255, 0, 0), (0, 0, 0))
                 input_string = ""  # Clear the input string after the action
             else:
                 if event.unicode:  # Check if the pressed key has a unicode representation

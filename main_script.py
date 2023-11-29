@@ -9,13 +9,11 @@ def main():
 
     print("Connected to Pixoo")
 
-    pixoo.draw_text("Tetris", 12, 100, (0, 0, 255), (0, 0, 0))
-
     while True:
         if True:
             try:
                 sleep(0.01)
-                pixoo.draw_pic("tetris.png")
+                pixoo.draw_pic("image.png")
             except Exception as e:
                 print(f"An error occurred: {e}")
             sleep(0.01)

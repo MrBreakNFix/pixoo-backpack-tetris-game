@@ -8,9 +8,9 @@ def run_tetris_game():
     pygame.init()
 
     # Constants
-    SCREEN_WIDTH = 16
-    SCREEN_HEIGHT = 16  # Adjusted for the 16x16 grid
-    GRID_SIZE = 1
+    SCREEN_WIDTH = 800
+    SCREEN_HEIGHT = 800  # Adjusted for the 16x16 grid
+    GRID_SIZE = 50
     GRID_WIDTH = SCREEN_WIDTH // GRID_SIZE
     GRID_HEIGHT = SCREEN_HEIGHT // GRID_SIZE
 
@@ -24,7 +24,7 @@ def run_tetris_game():
     RED = (255, 0, 0)
     BLUE = (0, 0, 255)
 
-    BACKGROUND = (50, 50, 50)
+    BACKGROUND = (0, 0, 0)
 
     # Tetromino shapes
     SHAPES = [
@@ -162,11 +162,15 @@ def run_tetris_game():
         pygame.display.flip()
 
         try:
-            pygame.image.save(screen, f"tetris.png")
+            # shrink the image to 16x16
+            small_screen = pygame.Surface((16, 16))
+            pygame.transform.scale(screen, (16, 16), small_screen)
+            pygame.image.save(small_screen, "image.png")
+
         except Exception as e:
             print(f"An error occurred: {e}")
 
-        clock.tick(3)
+        clock.tick(2)
         if game_over:
             print("GAME OVER")
 

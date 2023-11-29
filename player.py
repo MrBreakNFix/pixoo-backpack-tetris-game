@@ -4,6 +4,7 @@ import pygame
 def play_midi(file_path):
     pygame.mixer.init()
     pygame.mixer.music.load(file_path)
+    pygame.mixer.music.set_volume(0.5)
     pygame.mixer.music.play()
 
 
